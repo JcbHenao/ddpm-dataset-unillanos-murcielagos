@@ -1,6 +1,6 @@
 # Resultados
 
-Solo métricas y tablas; las imágenes generadas están en `datos/` (no se suben).
+Métricas y tablas de los experimentos. Las imágenes generadas se describen en [`datos/README.md`](../datos/README.md).
 
 ## `pulsos-grid-timesteps-lr/`
 

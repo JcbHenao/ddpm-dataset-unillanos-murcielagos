@@ -1,8 +1,7 @@
-# Datos (no se suben a GitHub)
+# Datos
 
-Esta carpeta está excluida en `.gitignore`. Contiene las salidas de los pipelines y las imágenes
-generadas; para compartirlas conviene un repositorio de datos (por ejemplo Zenodo o Drive) y
-enlazarlo desde el README principal.
+Los datos del proyecto no se incluyen en el repositorio por su tamaño. Esta es la estructura de
+la carpeta `datos/` que usan los scripts, con las salidas de los pipelines y las imágenes generadas.
 
 | Carpeta | Contenido | Tamaño aprox. |
 | --- | --- | --- |

@@ -15,8 +15,8 @@ espectrogramas sintéticos de pulsos y secuencias de ecolocalización con modelo
 | [`modelos/`](modelos/) | Entrenamiento y evaluación de los modelos: pulsos (DDPM, DiT, barrido de timesteps y learning rate, nSSIM cruzado) y secuencias (por especie y condicionado por especie). |
 | [`pseudosecuencias/`](pseudosecuencias/) | Construcción del dataset de pseudo-secuencias de 2 y 3 pulsos con su espaciado real, y entrenamiento multicondicional (especie, número de pulsos, patrón de frecuencia). |
 | [`resultados/`](resultados/) | Métricas de los experimentos (CSV, JSON, tabla LaTeX). Sin imágenes. |
-| `datos/` | **No se sube.** Anotaciones procesadas, espectrogramas e imágenes generadas. Ver [`datos/README.md`](datos/README.md). |
-| [`docs/`](docs/) | `inventario_reorganizacion.csv`: de dónde salió cada archivo de la descarga original y a dónde se movió. |
+| [`datos/`](datos/) | Descripción de los datos del proyecto (anotaciones procesadas, espectrogramas e imágenes generadas), que no se incluyen en el repositorio. |
+| [`docs/`](docs/) | `inventario_reorganizacion.csv`: ubicación original y actual de cada archivo del proyecto. |
 
 ## Flujo de trabajo
 
