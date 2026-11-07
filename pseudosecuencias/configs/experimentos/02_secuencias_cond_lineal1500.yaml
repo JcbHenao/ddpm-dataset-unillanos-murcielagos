@@ -1,0 +1,11 @@
+# Modelo condicionado por especie, esquema lineal con 1500 pasos y EMA.
+hereda: ../base.yaml
+
+nombre: 02_secuencias_cond_lineal1500
+descripcion: Condicionado, lineal 1500 pasos, EMA, bf16, lote efectivo 32.
+
+modo: condicional
+
+ruido:
+  pasos_entrenamiento: 1500
+  esquema: linear

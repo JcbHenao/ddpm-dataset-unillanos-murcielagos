@@ -1,0 +1,5 @@
+# Modelo principal: especie + n + patron, lineal 1500 pasos, EMA.
+hereda: ../base_pseudo.yaml
+
+nombre: 21_pseudo_multicond_lineal1500
+descripcion: Condiciones especie, n y patron; lineal 1500 pasos; EMA; lote efectivo 32.

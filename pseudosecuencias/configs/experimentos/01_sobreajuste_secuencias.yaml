@@ -1,0 +1,20 @@
+# Prueba de sobreajuste: 16 secuencias por especie, muchas epocas.
+# Si ni asi reproduce pulsos reconocibles, el problema es de esquema de ruido
+# o de representacion, no de cantidad de datos.
+hereda: ../base.yaml
+
+nombre: 01_sobreajuste_secuencias
+descripcion: 16 imagenes por especie, entrenamiento largo, sin metricas finales.
+
+datos:
+  subconjunto: 16
+
+entrenamiento:
+  epocas: 400
+  acumulacion: 1
+  warmup: 100
+  cada_muestras_epocas: 50
+  cada_checkpoint_epocas: 50
+
+evaluacion:
+  calcular_al_final: false

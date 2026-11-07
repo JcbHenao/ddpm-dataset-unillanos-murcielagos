@@ -1,0 +1,29 @@
+# Control del entorno: reproducir el mejor resultado del barrido de pulsos
+# (ts1500, lr 1e-4, FID ~48). Si el entorno nuevo da un FID muy distinto
+# con la misma configuracion, hay algo mal configurado ANTES de culpar al modelo.
+hereda: ../base.yaml
+
+nombre: 00_pulsos_referencia_ts1500_lr1e-4
+descripcion: Reproduce la configuracion ganadora del barrido de pulsos 128x128.
+modo: incondicional
+
+datos:
+  # AJUSTAR: carpeta de la muestra balanceada de pulsos de alta calidad
+  ruta: /media/adalab/bodega/CamiloBuitrago/espectrogramas/Muestra_Molossus_Alta_Calidad_128
+  especies: []              # todos los .png de la carpeta como una sola clase
+  alto: 128
+  ancho: 128
+
+ruido:
+  pasos_entrenamiento: 1500
+  esquema: linear
+
+entrenamiento:
+  epocas: 50
+  lote: 40
+  acumulacion: 1
+  lr: 1.0e-4
+  warmup: 250
+  precision: fp16           # igual que en el articulo; si da NaN, bf16
+  ema:
+    usar: false             # el articulo no usaba EMA; se mantiene igual para comparar

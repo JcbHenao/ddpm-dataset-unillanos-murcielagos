@@ -1,0 +1,15 @@
+{
+    "config": "ts1000_lr1e4",
+    "timesteps": 1000,
+    "learning_rate": 0.0001,
+    "fid_test": 56.064292907714844,
+    "nssim_test_mean": 0.09331119855865837,
+    "nssim_test_std": 0.019823678359611668,
+    "nssim_test_median": 0.09003566205501556,
+    "nssim_test_max": 0.15465618669986725,
+    "nssim_train_mean": 0.09908516841009259,
+    "nssim_train_std": 0.019876925439999756,
+    "nssim_train_max": 0.16106431186199188,
+    "pct_train_sobre_umbral": 0.0,
+    "gap_train_test": 0.005773969851434219
+}

@@ -1,0 +1,17 @@
+# Igual que 21 pero con coseno, SNR terminal cero, prediccion v y escala de
+# entrada 0.5 (128x512 tiene 4 veces los pixeles de 128x128: SNR x0.25).
+hereda: ../base_pseudo.yaml
+
+nombre: 22_pseudo_multicond_coseno_zsnr
+descripcion: Condiciones especie, n y patron; coseno + SNR terminal cero + v_prediction + escala 0.5.
+
+ruido:
+  pasos_entrenamiento: 1000
+  esquema: squaredcos_cap_v2
+  snr_terminal_cero: true
+  prediccion: v_prediction
+  escala_entrada: 0.5
+
+evaluacion:
+  muestreador: ddim
+  pasos_muestreo: 200

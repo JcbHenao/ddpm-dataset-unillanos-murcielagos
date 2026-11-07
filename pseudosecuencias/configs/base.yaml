@@ -1,0 +1,78 @@
+# =====================================================
+# Configuracion base. Todo experimento hereda de aqui y solo
+# sobrescribe lo que cambia (clave "hereda" en el YAML del experimento).
+# =====================================================
+
+nombre: base                # nombre del experimento -> carpeta runs/<nombre>
+descripcion: ""
+
+# condicional  : un modelo para todas las especies (etiqueta de clase en la UNet)
+# por_especie  : un modelo independiente por especie (el lanzador lo expande en N corridas)
+# incondicional: un modelo sin etiquetas sobre todo lo que haya en la ruta
+modo: condicional
+
+datos:
+  # Carpeta con una subcarpeta por especie (nombre exacto). Si "especies" es una
+  # lista vacia, se toman todos los .png de la ruta (recursivo) como una sola clase.
+  ruta: /media/adalab/bodega/CamiloBuitrago/espectrogramas/Espectrogramas_Secuencias_1024x128px
+  especies: [Molossus_1, MolossusMolossus, MolossusRufus, Saccopteryx_sp, SBilineata, SLeptura]
+  alto: 128
+  ancho: 1024
+  canales: 3                # 3 = RGB (cmap jet); 1 = escala de grises
+  # false: si alguna imagen no mide alto x ancho, el entrenamiento se detiene con
+  # un error en vez de redimensionarla en silencio (un Resize de 2048 a 1024
+  # adelgaza los pulsos a la mitad sin avisar).
+  permitir_redimensionar: false
+  subconjunto: null         # entero = usar solo N imagenes por especie (prueba de sobreajuste)
+  num_workers: 4
+
+modelo:
+  layers_per_block: 2
+  block_out_channels: [128, 128, 256, 256, 512, 512]
+  down_block_types: [DownBlock2D, DownBlock2D, DownBlock2D, DownBlock2D, AttnDownBlock2D, DownBlock2D]
+  up_block_types: [UpBlock2D, AttnUpBlock2D, UpBlock2D, UpBlock2D, UpBlock2D, UpBlock2D]
+
+ruido:
+  pasos_entrenamiento: 1500
+  esquema: linear           # linear | squaredcos_cap_v2
+  beta_start: 0.0001
+  beta_end: 0.02
+  # Lin et al. 2024: fuerza ruido puro en t = T. Exige prediccion v_prediction.
+  snr_terminal_cero: false
+  prediccion: epsilon       # epsilon | v_prediction
+  # Chen 2023: multiplicar la imagen limpia por b < 1 equivale a dividir el SNR
+  # entre 1/b^2 en todos los pasos (mas ruido efectivo para imagenes grandes).
+  # Referencia 128x128 -> 1.0 ; 128x512 -> 0.5 ; 128x1024 -> 0.35
+  escala_entrada: 1.0
+
+entrenamiento:
+  epocas: 50
+  pasos_max: null           # tope de pasos de optimizador (null = sin tope)
+  lote: 4                   # por GPU
+  acumulacion: 8            # lote efectivo = lote x acumulacion x GPUs
+  lr: 1.0e-4
+  warmup: 500               # en pasos de optimizador
+  precision: bf16           # no | fp16 | bf16  (bf16 evita los NaN de fp16 en GPUs Ampere o mas nuevas)
+  permitir_cpu: false       # sin GPU la corrida falla en vez de entrenar dias en CPU
+  clip_grad: 1.0
+  semilla: 42
+  ema:
+    usar: true
+    decay: 0.9999
+    warmup: true            # el decay sube gradualmente; necesario si hay pocos pasos
+    power: 0.75
+  cada_muestras_epocas: 10  # grilla de muestras cada N epocas
+  cada_checkpoint_epocas: 10
+
+evaluacion:
+  calcular_al_final: true
+  muestreador: ddpm         # ddpm | ddim
+  pasos_muestreo: null      # null = los mismos de entrenamiento (ddpm). Con ddim, p. ej. 100
+  muestras_por_clase: 500
+  lote: 16
+  ssim_linea_base: 200
+  # Secuencias de prueba para mostrar (runs/<nombre>/muestras_finales/): al terminar,
+  # imagenes generadas y reales por cada combinacion de condiciones, mas una hoja por especie.
+  muestras_finales:
+    por_combinacion: 4      # 0 = no generar
+    max_combinaciones: null # null = todas las del dataset

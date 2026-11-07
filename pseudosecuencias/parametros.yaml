@@ -1,0 +1,120 @@
+# =====================================================
+# Parametros del proyecto de pseudo-secuencias.
+# Las RUTAS de datos NO se repiten aqui: salen de config.py del
+# pipeline de limpieza (ver rutas.py). Aqui solo va lo propio de
+# este proyecto.
+# =====================================================
+
+# Carpeta donde viven config.py, espectrogramas_secuencias_comun.py,
+# lector_anotaciones.py, las fases 0-5 y la subcarpeta mapeos/ del
+# pipeline de limpieza. La variable de entorno PIPELINE_LIMPIEZA_DIR,
+# si existe, tiene prioridad sobre este valor.
+# Este proyecto vive aparte, en /media/adalab/bodega/CamiloBuitrago/pseudosecuencias
+pipeline_dir: /media/adalab/bodega/CamiloBuitrago/Generacion_Espectrogramas
+
+# Carpeta de salida (P0..P4, C1 y el dataset). null = <carpeta del proyecto>/datos,
+# es decir /media/adalab/bodega/CamiloBuitrago/pseudosecuencias/datos.
+# Las salidas del pipeline de limpieza no se tocan.
+salida: null
+
+# Nombres de columna del archivo maestro (anotaciones_unificadas.csv)
+columnas:
+  tipo: Tipo_Anotacion
+  archivo: Begin File
+  inicio: Begin Time (s)
+  fin: End Time (s)
+  especie: Specie
+  calidad: Calidad
+  tipo_pulso: Pulse Type
+  id: Anotacion_ID
+  # Opcionales (fase 2 del pipeline las conserva de las tablas de Raven):
+  # la frecuencia pico se busca dentro de la caja anotada
+  freq_baja: Low Freq (Hz)
+  freq_alta: High Freq (Hz)
+  # se compara con la frecuencia pico medida aqui (control de alineacion de tiempos)
+  freq_pico_raven: Peak Freq (Hz)
+  # Jancel / Maira: dos anotadores pueden marcar el mismo pulso con tiempos casi iguales
+  anotador: Anotador
+
+valores_tipo:
+  pulso: Pulso
+  secuencia: Secuencia
+
+vinculacion:
+  # Un pulso pertenece a una secuencia si su centro cae dentro de ella
+  # (con esta tolerancia en segundos a cada lado).
+  tolerancia_s: 0.002
+  # Dos pulsos del mismo audio y especie, de anotadores DISTINTOS, que se
+  # solapan al menos esta fraccion (interseccion / union) son el mismo pulso
+  # anotado dos veces: se conserva uno (el de mejor calidad). La fase 2 del
+  # pipeline solo elimina duplicados exactos.
+  solape_mismo_pulso: 0.5
+
+frecuencia:
+  banda_hz: [20000, 100000]   # igual que el render uniforme de secuencias
+  n_fft: 2048                 # con relleno de ceros: pico mas fino
+  ventana: 512
+  hop: 128
+  # Diferencia minima de frecuencia pico para contar un cambio entre pulsos
+  # consecutivos (criterio de tipos de llamada de Jung et al. 2014: > 2 kHz)
+  umbral_transicion_hz: 2000
+
+intervalos:
+  percentiles: [5, 25, 50, 75, 95]
+  # Para especies sin secuencias anotadas: dos pulsos consecutivos solo
+  # cuentan si estan a menos de esto (evita medir pausas entre pasadas).
+  max_intervalo_sin_secuencia_s: 0.5
+
+# Rangos publicados para contrastar la mediana (ms). Nombres = carpetas del pipeline.
+referencias:
+  MolossusMolossus:
+    max_ms: 200
+    fuente: "Mora et al. 2004: pares alternos solo con intervalos < 200 ms"
+  SBilineata:
+    min_ms: 42
+    max_ms: 167
+    fuente: "Burchardt et al. 2019: ritmo de 6-24 Hz (conversion propia)"
+
+grupos:
+  tamanos: [2, 3]               # pulsos por pseudo-secuencia
+  # Calidades aceptadas para CADA pulso del grupo. El orden y los intervalos
+  # se calculan con todos los pulsos (P1), el filtro se aplica aqui.
+  calidades: [Alta, Media]
+  paso: 1                       # 1 = grupos deslizantes (1-2, 2-3, ...); 2 = sin compartir el primer pulso
+  # El espaciado entre pulsos, con su variabilidad, es parte de lo que el modelo
+  # debe aprender: por defecto NO se filtra por percentiles. Solo se excluyen
+  # enlaces no validos (otra especie, solapamiento, fuera de la secuencia) y
+  # grupos que no caben en la ventana. Activar solo para un experimento aparte.
+  filtrar_por_percentil: false
+  percentil_bajo: 5
+  percentil_alto: 95
+  # Si una transicion tiene menos pares que esto, se usan los percentiles de "todas"
+  min_pares_por_transicion: 20
+
+ventana:
+  # Todas las imagenes miden exactamente alto x ancho px, para n = 2 y n = 3.
+  ancho_px: 512                 # multiplo de 32 (UNet de 6 niveles)
+  margen_ms: 5                  # audio real antes del primer pulso y despues del ultimo
+  # La duracion de la ventana se calcula para que quepa este cuantil de la
+  # duracion de los grupos de 3 pulsos (de inicio del 1.o a fin del 3.o).
+  # Los grupos que no caben se excluyen y se reportan.
+  cuantil_duracion: 0.95
+  duracion_ms: null             # fijar a mano para ignorar el cuantil (p. ej. 300)
+
+render:
+  # Tasa comun: todos los audios se remuestrean a esta tasa. Con 320 kHz y
+  # n_fft 512 cada fila mide exactamente 625 Hz y 20-100 kHz son 128 filas,
+  # sin estirar ni redimensionar. Audios con Nyquist menor quedan con la
+  # banda alta en el piso (no se estira).
+  sr_comun: 320000
+  n_fft: 512
+  # Intensidad: igual que los experimentos previos (render_espectrograma_uniforme):
+  # dB respecto al maximo del espectro completo, recorte fijo -80..0 dB, sin filtros.
+  rango_db: 80
+  colormap: jet                 # jet (como los datasets anteriores) o gris
+
+particion:
+  proporciones: [0.70, 0.15, 0.15]   # train, val, test; por GRABACION
+  semilla: 42
+
+procesos: null   # null = todos los nucleos

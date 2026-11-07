@@ -1,0 +1,105 @@
+================================================================================
+EVALUACIÓN TEST: ts1500_lr2e4
+================================================================================
+Loading pipeline components...: 100%|████████████████████████████████████████████| 2/2 [00:00<00:00, 10.78it/s]
+
+Best epoch     : 34
+Best val loss  : 0.032807
+Test loss      : 0.039396
+
+================================================================================
+RESUMEN FINAL
+================================================================================
+
+ts500_lr2.5e5
+  Timesteps    : 500
+  Learning rate: 2.5e-05
+  Best epoch   : 50
+  Best val     : 0.092200
+  Test loss    : 0.135512
+
+ts500_lr5e5
+  Timesteps    : 500
+  Learning rate: 5e-05
+  Best epoch   : 50
+  Best val     : 0.078785
+  Test loss    : 0.116680
+
+ts500_lr1e4
+  Timesteps    : 500
+  Learning rate: 0.0001
+  Best epoch   : 50
+  Best val     : 0.069553
+  Test loss    : 0.102218
+
+ts500_lr2e4
+  Timesteps    : 500
+  Learning rate: 0.0002
+  Best epoch   : 36
+  Best val     : 0.062305
+  Test loss    : 0.092820
+
+ts1000_lr2.5e5
+  Timesteps    : 1000
+  Learning rate: 2.5e-05
+  Best epoch   : 49
+  Best val     : 0.067442
+  Test loss    : 0.116879
+
+ts1000_lr5e5
+  Timesteps    : 1000
+  Learning rate: 5e-05
+  Best epoch   : 49
+  Best val     : 0.056732
+  Test loss    : 0.100201
+
+ts1000_lr1e4
+  Timesteps    : 1000
+  Learning rate: 0.0001
+  Best epoch   : 49
+  Best val     : 0.048584
+  Test loss    : 0.086645
+
+ts1000_lr2e4
+  Timesteps    : 1000
+  Learning rate: 0.0002
+  Best epoch   : 49
+  Best val     : 0.042852
+  Test loss    : 0.076492
+
+ts1500_lr2.5e5
+  Timesteps    : 1500
+  Learning rate: 2.5e-05
+  Best epoch   : 41
+  Best val     : 0.054328
+  Test loss    : 0.062151
+
+ts1500_lr5e5
+  Timesteps    : 1500
+  Learning rate: 5e-05
+  Best epoch   : 34
+  Best val     : 0.044759
+  Test loss    : 0.053087
+
+ts1500_lr1e4
+  Timesteps    : 1500
+  Learning rate: 0.0001
+  Best epoch   : 34
+  Best val     : 0.037476
+  Test loss    : 0.044896
+
+ts1500_lr2e4
+  Timesteps    : 1500
+  Learning rate: 0.0002
+  Best epoch   : 34
+  Best val     : 0.032807
+  Test loss    : 0.039396
+
+================================================================================
+MEJOR CONFIGURACIÓN
+Config       : ts1500_lr2e4
+Timesteps    : 1500
+Learning rate: 0.0002
+Best epoch   : 34
+Best val     : 0.032807
+Test loss    : 0.039396

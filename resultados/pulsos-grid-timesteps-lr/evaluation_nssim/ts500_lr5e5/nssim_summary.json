@@ -1,0 +1,15 @@
+{
+    "config": "ts500_lr5e5",
+    "timesteps": 500,
+    "learning_rate": 5e-05,
+    "fid_test": 74.80640411376953,
+    "nssim_test_mean": 0.08284300085157156,
+    "nssim_test_std": 0.011584445129680461,
+    "nssim_test_median": 0.08195522055029869,
+    "nssim_test_max": 0.13126622140407562,
+    "nssim_train_mean": 0.08770708326250315,
+    "nssim_train_std": 0.012198674097330907,
+    "nssim_train_max": 0.1342954933643341,
+    "pct_train_sobre_umbral": 0.0,
+    "gap_train_test": 0.004864082410931586
+}

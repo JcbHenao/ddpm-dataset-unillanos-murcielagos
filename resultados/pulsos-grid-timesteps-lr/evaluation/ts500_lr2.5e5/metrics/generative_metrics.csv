@@ -1,0 +1,2 @@
+experiment,timesteps,learning_rate,seed,num_real,num_generated,image_size,inference_steps,fid,real_nearest_ssim_mean,real_nearest_ssim_std,real_nearest_ssim_min,real_nearest_ssim_max,synthetic_nearest_ssim_mean,synthetic_nearest_ssim_std,synthetic_nearest_ssim_min,synthetic_nearest_ssim_max,ks_statistic,ks_pvalue
+ts500_lr2.5e5,500,2.5e-05,42,200,200,128,500,87.80218505859375,0.19938722401857376,0.1032136597701718,0.06917917728424072,0.42890381813049316,0.1336734251305461,0.02878932350173679,0.08910565078258514,0.22486042976379395,0.4149999999999999,8.330858010549734e-16

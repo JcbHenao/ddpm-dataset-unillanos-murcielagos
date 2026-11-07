@@ -1,0 +1,19 @@
+# Condicionado, coseno con SNR terminal cero, prediccion v y escala de entrada
+# para 128x1024 (equivale a SNR x0.125 respecto a 128x128).
+hereda: ../base.yaml
+
+nombre: 03_secuencias_cond_coseno_zsnr
+descripcion: Condicionado, coseno + SNR terminal cero + v_prediction + escala 0.35.
+
+modo: condicional
+
+ruido:
+  pasos_entrenamiento: 1000
+  esquema: squaredcos_cap_v2
+  snr_terminal_cero: true
+  prediccion: v_prediction
+  escala_entrada: 0.35
+
+evaluacion:
+  muestreador: ddim
+  pasos_muestreo: 200

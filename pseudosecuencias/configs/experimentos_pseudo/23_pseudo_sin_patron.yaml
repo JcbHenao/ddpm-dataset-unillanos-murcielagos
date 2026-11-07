@@ -1,0 +1,9 @@
+# Ablacion: igual que 21 sin la condicion de patron. Comparar con 21 dice cuanto
+# aporta decirle al modelo el patron (alto-bajo, bajo-alto, ...) frente a que lo
+# descubra solo a partir de la especie y el numero de pulsos.
+hereda: ../base_pseudo.yaml
+
+nombre: 23_pseudo_sin_patron
+descripcion: Ablacion de 21 sin la condicion patron (solo especie y n).
+
+condiciones: [especie, n]

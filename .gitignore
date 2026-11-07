@@ -1,0 +1,28 @@
+# Datos y salidas grandes: se guardan fuera de GitHub (ver datos/README.md)
+datos/*
+!datos/README.md
+_no-subir/
+*.zip
+drive-download-*/
+
+# Salidas de entrenamiento y modelos
+runs/
+ddpm-*/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Python y entornos
+__pycache__/
+*.pyc
+.venv*/
+venv/
+pyvenv.cfg
+.ipynb_checkpoints/
+
+# Sistema
+desktop.ini
+Thumbs.db
+.DS_Store

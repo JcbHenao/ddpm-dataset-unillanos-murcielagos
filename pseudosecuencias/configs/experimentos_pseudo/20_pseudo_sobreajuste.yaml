@@ -1,0 +1,25 @@
+# Control 2: 16 imagenes por especie, entrenamiento largo. Si no reproduce los
+# pulsos con su espaciado y su patron (memorizar aqui es lo esperado), no tiene
+# sentido el entrenamiento completo.
+hereda: ../base_pseudo.yaml
+
+nombre: 20_pseudo_sobreajuste
+descripcion: Sobreajuste con 16 pseudo-secuencias por especie; condiciones especie, n y patron.
+
+datos:
+  subconjunto: 16
+
+entrenamiento:
+  epocas: 800
+  acumulacion: 1
+  warmup: 100
+  prob_sin_condicion: 0.0   # sin dropout: aqui solo importa si puede memorizar
+  cada_muestras_epocas: 100
+  cada_checkpoint_epocas: 100
+
+evaluacion:
+  calcular_al_final: false
+  # Se mantiene DDPM con los 1500 pasos completos: aqui se juzga la fidelidad, no la velocidad.
+  muestreador: ddpm
+  pasos_muestreo: null
+  lote: 16

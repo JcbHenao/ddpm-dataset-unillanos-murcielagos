@@ -1,0 +1,56 @@
+# =====================================================
+# Base para entrenar con las pseudo-secuencias (proyecto pseudosecuencias, P4).
+# Hereda de base.yaml y cambia lo propio de este dataset. No es un experimento:
+# los experimentos estan en configs/experimentos_pseudo/ y heredan de aqui.
+# =====================================================
+hereda: base.yaml
+
+nombre: base_pseudo
+descripcion: ""
+
+# Un solo modelo condicionado a la vez por especie, numero de pulsos y patron de
+# frecuencia. Cada condicion tiene su propio embedding y se suman (ver ddpm/modelo.py).
+modo: multicondicional
+condiciones: [especie, n, patron]
+
+datos:
+  # metadatos.csv de P4: una fila por imagen con especie, n, patron y particion.
+  # Las imagenes se leen relativas a esta carpeta (ruta_relativa).
+  metadatos: /media/adalab/bodega/CamiloBuitrago/pseudosecuencias/datos/P4_dataset/metadatos.csv
+  particion: train
+  especies: []          # vacio = todas las especies con al menos min_imagenes_por_especie en train
+  # Con muy pocas imagenes una especie no se aprende y distorsiona las metricas;
+  # las que no llegan se dejan fuera y se reportan (verificar_entorno y salida.log).
+  min_imagenes_por_especie: 50
+  alto: 128
+  ancho: 512
+  canales: 3
+
+ruido:
+  pasos_entrenamiento: 1500
+  esquema: linear
+
+entrenamiento:
+  epocas: 300           # ajustar con la estimacion de horas de verificar_entorno.py
+  lote: 8               # 128x512 son 4 veces menos pixeles que 128x1024
+  acumulacion: 4        # lote efectivo 32 por GPU
+  lr: 1.0e-4
+  warmup: 500
+  precision: bf16
+  # Probabilidad de reemplazar cada condicion por "sin dato" en cada ejemplo.
+  # Permite generar fijando solo algunas condiciones y usar guia al muestrear.
+  prob_sin_condicion: 0.1
+  ema:
+    usar: true
+  cada_muestras_epocas: 25
+  cada_checkpoint_epocas: 25
+
+evaluacion:
+  # Grillas y metricas con DDIM de 200 pasos en todos los experimentos (21-23 comparables).
+  # Con DDPM de 1500 pasos, 500 imagenes x 4 especies tardarian ~10 h solo en metricas.
+  muestreador: ddim
+  pasos_muestreo: 200
+  lote: 32
+  guia: 1.0             # >1 = guia sin clasificador; se puede probar despues con generar.py --guia
+  filas_grilla: 12      # combinaciones especie/n/patron mas frecuentes en la grilla de muestras
+  muestras_por_clase: 500

@@ -1,0 +1,85 @@
+origen,destino,tipo,archivos
+pseudosecuencias,_no-subir/versiones-anteriores/pseudosecuencias-2026-10-26,carpeta,13
+secuencias_paralelo,_no-subir/versiones-anteriores/secuencias_paralelo,carpeta,3
+drive-download-20261107T181717Z-1-001/Carpeta sin título/config.py,limpieza-dataset/config.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/lector_anotaciones.py,limpieza-dataset/lector_anotaciones.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/espectrogramas_secuencias_comun.py,limpieza-dataset/espectrogramas_secuencias_comun.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase0_inventario_y_redundancia.py,limpieza-dataset/fase0_inventario_y_redundancia.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase1_auditoria_categorias_crudas.py,limpieza-dataset/fase1_auditoria_categorias_crudas.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase2_normalizar_unificar.py,limpieza-dataset/fase2_normalizar_unificar.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase3_auditoria_resultado.py,limpieza-dataset/fase3_auditoria_resultado.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase4_generar_espectrogramas.py,limpieza-dataset/fase4_generar_espectrogramas.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/fase5_generar_espectrogramas_secuencias.py,limpieza-dataset/fase5_generar_espectrogramas_secuencias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/contador-anotaciones.py,limpieza-dataset/contador-anotaciones.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/mapeos,limpieza-dataset/mapeos,carpeta,3
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/limpiar_anotaciones_pulsos.py,limpieza-dataset/version-previa/limpiar_anotaciones_pulsos.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/normalizar_anotaciones.py,limpieza-dataset/version-previa/normalizar_anotaciones.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/audit_ventana_pulsos.py,limpieza-dataset/version-previa/audit_ventana_pulsos.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/secuencias/limpiar_anotaciones_secuencias.py,limpieza-dataset/version-previa/limpiar_anotaciones_secuencias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/audit_anotacion_calidad.py,limpieza-dataset/version-previa/verificacion_datos_anotados/audit_anotacion_calidad.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/audit_anotacion_especie.py,limpieza-dataset/version-previa/verificacion_datos_anotados/audit_anotacion_especie.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/audit_anotacion_pulsetype.py,limpieza-dataset/version-previa/verificacion_datos_anotados/audit_anotacion_pulsetype.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/audit_columnas_categorias.py,limpieza-dataset/version-previa/verificacion_datos_anotados/audit_columnas_categorias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/audit_pulsos.py,limpieza-dataset/version-previa/verificacion_datos_anotados/audit_pulsos.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/pulsos_exceden_ventana.csv,datos/anotaciones/version-previa/verificacion_datos_anotados/pulsos_exceden_ventana.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/resumen_calidad_originales.csv,datos/anotaciones/version-previa/verificacion_datos_anotados/resumen_calidad_originales.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/resumen_especies_originales.csv,datos/anotaciones/version-previa/verificacion_datos_anotados/resumen_especies_originales.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/verificacion_datos_anotados/resumen_pulse_type_crudo.csv,datos/anotaciones/version-previa/verificacion_datos_anotados/resumen_pulse_type_crudo.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/mapeo_calidad.csv,_no-subir/duplicados/previo_mapeo_calidad.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/mapeo_especies.csv,_no-subir/duplicados/previo_mapeo_especies.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/mapeo_pulse_type.csv,_no-subir/duplicados/previo_mapeo_pulse_type.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/generar_espectrogramas_pulsos_datos_anotados.py,generacion-espectrogramas/pulsos/generar_espectrogramas_pulsos_datos_anotados.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/generar_espectrogramas_pulsos_datos_anotados_filtros.py,generacion-espectrogramas/pulsos/generar_espectrogramas_pulsos_datos_anotados_filtros.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/seleccion_muestra_pulsos_molossus.py,generacion-espectrogramas/pulsos/seleccion_muestra_pulsos_molossus.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/secuencias/generar_espectrogramas_secuencia_bounding_box.py,generacion-espectrogramas/secuencias/generar_espectrogramas_secuencia_bounding_box.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/secuencias/generar_espectrogramas_secuencia_con_filtros.py,generacion-espectrogramas/secuencias/generar_espectrogramas_secuencia_con_filtros.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/seleccion_scuencias.py,generacion-espectrogramas/secuencias/seleccion_scuencias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título/mover_secuencias.py,generacion-espectrogramas/secuencias/mover_secuencias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/elegir_secuencia.py,generacion-espectrogramas/secuencias/elegir_secuencia.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/train-ddpm.py,modelos/pulsos/train-ddpm.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/ddpm_pulsos.py,modelos/pulsos/ddpm_pulsos.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/ditmodel.py,modelos/pulsos/ditmodel.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/imagen-func-modelo.py,modelos/pulsos/imagen-func-modelo.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/ddpm_grid_experimentos.py,modelos/pulsos/ddpm_grid_experimentos.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluar_grid.py,modelos/pulsos/evaluar_grid.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/nssim_cruzado.py,modelos/pulsos/nssim_cruzado.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/ddpm_secuencias_v1.py,modelos/secuencias/ddpm_secuencias_v1.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/evaluar_ddpm_secuencias.py,modelos/secuencias/evaluar_ddpm_secuencias.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/train-ddpm-secuencias_v2.py,modelos/secuencias/train-ddpm-secuencias_v2.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/train_ddpm_secuencias_condicional.py,modelos/secuencias/train_ddpm_secuencias_condicional.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/train-ddpm-secuencias_v2.1.py,modelos/secuencias/train-ddpm-secuencias_v2.1.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/train_ddpm_secuencias_condicional2.py,modelos/secuencias/train_ddpm_secuencias_condicional2.py,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/summary.csv,resultados/pulsos-grid-timesteps-lr/summary.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/texto.txt,resultados/pulsos-grid-timesteps-lr/texto.txt,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1000_lr1e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1000_lr1e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1000_lr2.5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1000_lr2.5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1000_lr2e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1000_lr2e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1000_lr5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1000_lr5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1500_lr1e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1500_lr1e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1500_lr2.5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1500_lr2.5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1500_lr2e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1500_lr2e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts1500_lr5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts1500_lr5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts500_lr1e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts500_lr1e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts500_lr2.5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts500_lr2.5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts500_lr2e4/generated,datos/generadas/pulsos-grid-timesteps-lr/ts500_lr2e4,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation/ts500_lr5e5/generated,datos/generadas/pulsos-grid-timesteps-lr/ts500_lr5e5,carpeta,200
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation,resultados/pulsos-grid-timesteps-lr/evaluation,carpeta,37
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/evaluation_nssim,resultados/pulsos-grid-timesteps-lr/evaluation_nssim,carpeta,27
+drive-download-20261107T181717Z-1-001/Carpeta sin título2/resumen_metricas.csv,resultados/secuencias-50-epocas/resumen_metricas.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/candidatas/ranking.csv,resultados/candidatas-diapositivas/ranking.csv,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/candidatas,datos/candidatas-diapositivas,carpeta,19
+drive-download-20261107T181717Z-1-001/Carpeta sin título/Anotaciones_Unificadas,datos/anotaciones/Anotaciones_Unificadas,carpeta,21
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/Limpieza_Anotaciones_Pulsos,datos/anotaciones/version-previa/Limpieza_Anotaciones_Pulsos,carpeta,14
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/Espectrogramas_Pulsos_Anotados_512px,datos/espectrogramas/Espectrogramas_Pulsos_Anotados_512px,carpeta,7829
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/Muestra_Molossus_Alta_Calidad_128,datos/espectrogramas/Muestra_Molossus_Alta_Calidad_128,carpeta,1001
+drive-download-20261107T181717Z-1-001/Carpeta sin título/previo/pyvenv.cfg,_no-subir/entornos-virtuales/previo_pyvenv.cfg,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/pyvenv.cfg,_no-subir/entornos-virtuales/cici2026_pyvenv.cfg,archivo,1
+drive-download-20261107T181717Z-1-001/Carpeta sin título3/Resumen Anotaciones de.txt,_no-subir/revision-articulo/Resumen Anotaciones de.txt,archivo,1
+entrenamiento_ddpm.zip,_no-subir/versiones-anteriores/entrenamiento_ddpm.zip,archivo,1
+pseudosecuencias.zip,_no-subir/versiones-anteriores/pseudosecuencias.zip,archivo,1
+secuencias_paralelo.zip,_no-subir/versiones-anteriores/secuencias_paralelo.zip,archivo,1
+drive-download-20261105T180250Z-1-001.zip,_no-subir/descargas-drive/drive-download-20261105T180250Z-1-001.zip,archivo,1
+drive-download-20261107T181717Z-1-001.zip,_no-subir/descargas-drive/drive-download-20261107T181717Z-1-001.zip,archivo,1
+drive-download-20261107T181717Z-1-001,_no-subir/descargas-drive/drive-download-20261107T181717Z-1-001,carpeta (vacia tras mover),0
+(nuevo),"pseudosecuencias/ (version actual del servidor, ver _no-subir/versiones-anteriores/pseudosecuencias_actual_2026-11-07.zip)",carpeta,42
+_no-subir/versiones-anteriores/secuencias_paralelo/LEEME_paralelo.md,modelos/secuencias/LEEME_paralelo.md (copia),archivo,1

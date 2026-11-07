@@ -1,0 +1,9 @@
+# conda env create -f environment.yml
+# conda activate ddpm-murcielagos
+# Luego instalar PyTorch segun la CUDA del servidor y el resto (ver README).
+name: ddpm-murcielagos
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip

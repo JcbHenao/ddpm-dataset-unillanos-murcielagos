@@ -1,0 +1,13 @@
+# Entorno de DATOS para pseudo-secuencias (no incluye PyTorch: el entrenamiento
+# corre en el entorno del proyecto entrenamiento_ddpm).
+# Incluye lo que necesita importar config.py del pipeline de limpieza
+# (y su modulo espectrogramas_secuencias_comun.py).
+numpy
+pandas
+librosa
+soundfile
+matplotlib
+pillow
+pyyaml
+scipy
+tqdm

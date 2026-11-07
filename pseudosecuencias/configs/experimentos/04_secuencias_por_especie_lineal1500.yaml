@@ -1,0 +1,12 @@
+# Un modelo independiente por especie. El lanzador lo expande en una corrida
+# por especie: runs/04_secuencias_por_especie_lineal1500-<Especie>/
+hereda: ../base.yaml
+
+nombre: 04_secuencias_por_especie_lineal1500
+descripcion: Un modelo por especie, lineal 1500 pasos, EMA.
+
+modo: por_especie
+
+ruido:
+  pasos_entrenamiento: 1500
+  esquema: linear

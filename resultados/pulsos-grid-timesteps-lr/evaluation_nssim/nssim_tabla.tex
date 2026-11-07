@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\caption{Nearest SSIM cruzado de las muestras sintéticas frente al conjunto real, por configuración. Media $\pm$ desviación estándar sobre 200 muestras generadas. La columna TRAIN sirve como control de memorización.}
+\label{tab:nssim}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Configuración & $T$ & LR & FID $\downarrow$ & nSSIM test $\uparrow$ & nSSIM train \\
+\midrule
+ts500\_lr2.5e5 & 500 & 2.5e-05 & 87.80 & 0.0807 $\pm$ 0.0112 & 0.0851 \\
+ts500\_lr5e5 & 500 & 5.0e-05 & 74.81 & 0.0828 $\pm$ 0.0116 & 0.0877 \\
+ts500\_lr1e4 & 500 & 1.0e-04 & 64.64 & 0.0879 $\pm$ 0.0125 & 0.0932 \\
+ts500\_lr2e4 & 500 & 2.0e-04 & 68.80 & 0.0848 $\pm$ 0.0118 & 0.0902 \\
+ts1000\_lr2.5e5 & 1000 & 2.5e-05 & 82.95 & 0.0836 $\pm$ 0.0120 & 0.0885 \\
+ts1000\_lr5e5 & 1000 & 5.0e-05 & 69.10 & 0.0909 $\pm$ 0.0156 & 0.0962 \\
+ts1000\_lr1e4 & 1000 & 1.0e-04 & 56.06 & 0.0933 $\pm$ 0.0198 & 0.0991 \\
+ts1000\_lr2e4 & 1000 & 2.0e-04 & 48.67 & 0.0937 $\pm$ 0.0189 & 0.0993 \\
+ts1500\_lr2.5e5 & 1500 & 2.5e-05 & 86.52 & 0.0825 $\pm$ 0.0114 & 0.0864 \\
+ts1500\_lr5e5 & 1500 & 5.0e-05 & 67.24 & 0.0955 $\pm$ 0.0159 & 0.1011 \\
+ts1500\_lr1e4 & 1500 & 1.0e-04 & 48.26 & \textbf{0.1108 $\pm$ 0.0186} & 0.1172 \\
+ts1500\_lr2e4 & 1500 & 2.0e-04 & 44.57 & 0.1047 $\pm$ 0.0185 & 0.1111 \\
+\midrule
+Referencia real (test vs.\ train) & -- & -- & -- & 0.2065 $\pm$ 0.1041 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

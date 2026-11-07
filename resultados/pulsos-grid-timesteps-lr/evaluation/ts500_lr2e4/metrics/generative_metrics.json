@@ -1,0 +1,21 @@
+{
+    "experiment": "ts500_lr2e4",
+    "timesteps": 500,
+    "learning_rate": 0.0002,
+    "seed": 42,
+    "num_real": 200,
+    "num_generated": 200,
+    "image_size": 128,
+    "inference_steps": 500,
+    "fid": 68.8048324584961,
+    "real_nearest_ssim_mean": 0.19938722401857376,
+    "real_nearest_ssim_std": 0.1032136597701718,
+    "real_nearest_ssim_min": 0.06917917728424072,
+    "real_nearest_ssim_max": 0.42890381813049316,
+    "synthetic_nearest_ssim_mean": 0.14276220332831144,
+    "synthetic_nearest_ssim_std": 0.036798767626848874,
+    "synthetic_nearest_ssim_min": 0.069223552942276,
+    "synthetic_nearest_ssim_max": 0.22017395496368408,
+    "ks_statistic": 0.4,
+    "ks_pvalue": 1.108718722900174e-14
+}
